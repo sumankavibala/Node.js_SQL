@@ -1,6 +1,12 @@
 import Joi from "joi";
 
-export const validateStudentDetail = Joi.object().keys({
-    name:Joi.string().required(),
-    age:Joi.number().required()
+export const validateStudentDetailDTO = Joi.object().keys({
+    FirstName:Joi.string().required(),
+    LastName:Joi.string().required(),
+    EmailID:Joi.string().required(),
+    MobileNumber:Joi.number().required()
 })
+
+
+
+

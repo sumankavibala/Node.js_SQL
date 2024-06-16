@@ -1,6 +1,11 @@
+import "reflect-metadata" ;
+
 import createStudentRouter from "./src/createStudents/createStudent.controller";
 import deleteStudentRouter from "./src/deleteStudents/deleteStudent.controller";
 import updateStudentRouter from "./src/updateStudents/updateStudent.controller";
+import "../Node.js_project_1/src/core/db";
+import { viewStudent } from "./src/viewStudents/viewStudents.service";
+import getStudentRouter from "./src/viewStudents/viewStudents.controller";
 
 const express = require('express');
 
@@ -20,8 +25,10 @@ app.listen (port, () =>{
     console.log("running succesfully " + port );
 });
 
-app.use("/teacher", createStudentRouter);
+app.use("/Student", createStudentRouter);
 
-// app.use("/teacher/del", deleteStudentRouter);
+app.use("/studentdel", deleteStudentRouter);
 
-// app.use("/teacher/upd", updateStudentRouter);
+app.use("/studentUpdate", updateStudentRouter);
+
+app.use("/getStudent", getStudentRouter);

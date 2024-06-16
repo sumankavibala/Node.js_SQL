@@ -4,6 +4,6 @@ const express = require ("express");
 
 const deleteStudentRouter = express.Router();
 
-deleteStudentRouter.route("/").delete((req:any,res:any)=> delStudent(req,res));
+deleteStudentRouter.route("/deleteStudent/:ID").delete((req:any,res:any)=> delStudent(req,res));
 
 export default deleteStudentRouter;
